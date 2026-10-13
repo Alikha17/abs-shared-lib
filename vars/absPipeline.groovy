@@ -2,7 +2,7 @@ def call(Map config = [:]) {
     def appName = config.appName ?: 'unknown-app'
 
     pipeline {
-        agent any
+        agent { label 'build-agent' }
         stages {
             stage('Build and Test') {
                 steps {
